@@ -1,10 +1,10 @@
 import 'package:curso_mvvm_youtube/data/repositories/auth/auth_repository.dart';
 import 'package:curso_mvvm_youtube/utils/result.dart';
 
-class LoginViewModel {
+class LoginViewmodel {
   final AuthRepository _authRepository;
 
-  const LoginViewModel({required AuthRepository authRepository})
+  const LoginViewmodel({required AuthRepository authRepository})
     : _authRepository = authRepository;
 
   Future<Result<void>> login((String, String) credentials) async {
