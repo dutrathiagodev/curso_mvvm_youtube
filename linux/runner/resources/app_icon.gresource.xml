@@ -1,0 +1,5 @@
+<gresources>
+  <gresource prefix="/icons">
+    <file>app_icon.png</file>
+  </gresource>
+</gresources>

@@ -9,7 +9,22 @@ project(runner LANGUAGES CXX)
 add_executable(${BINARY_NAME}
   "main.cc"
   "my_application.cc"
+  "${CMAKE_CURRENT_BINARY_DIR}/app_icon.gresource.c"
   "${FLUTTER_MANAGED_DIR}/generated_plugin_registrant.cc"
+)
+
+find_program(GLIB_COMPILE_RESOURCES glib-compile-resources REQUIRED)
+add_custom_command(
+  OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/app_icon.gresource.c"
+  COMMAND ${GLIB_COMPILE_RESOURCES}
+    --generate-source
+    --target=${CMAKE_CURRENT_BINARY_DIR}/app_icon.gresource.c
+    --sourcedir=${CMAKE_CURRENT_SOURCE_DIR}/resources
+    "${CMAKE_CURRENT_SOURCE_DIR}/resources/app_icon.gresource.xml"
+  DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/resources/app_icon.gresource.xml"
+    "${CMAKE_CURRENT_SOURCE_DIR}/resources/app_icon.png"
+  VERBATIM
 )
 
 # Apply the standard set of build settings. This can be removed for applications
