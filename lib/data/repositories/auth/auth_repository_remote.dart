@@ -14,7 +14,7 @@ class AuthRepositoryRemote implements AuthRepository {
     required String username,
     required String password,
   }) async {
-    final LoginRequest request = LoginRequest(
+    final LoginRequest loginRequest = LoginRequest(
       username: username,
       password: password,
       expiresInMins: 30,

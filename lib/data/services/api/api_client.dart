@@ -1,3 +1,4 @@
+import 'package:curso_mvvm_youtube/data/services/api/models/login_request.dart';
 import 'package:curso_mvvm_youtube/data/services/api/models/login_response.dart';
 import 'package:curso_mvvm_youtube/utils/result.dart';
 import 'package:dio/dio.dart';
